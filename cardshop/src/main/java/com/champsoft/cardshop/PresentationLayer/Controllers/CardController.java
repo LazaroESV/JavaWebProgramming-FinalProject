@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cars")
+@RequestMapping("/cards")
 @Validated
 public class CardController {
 

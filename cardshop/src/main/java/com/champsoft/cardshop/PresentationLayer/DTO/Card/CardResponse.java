@@ -1,7 +1,5 @@
 package com.champsoft.cardshop.PresentationLayer.DTO.Card;
 
-import java.time.Instant;
-
 public record CardResponse(
         Long id,
         String serialNumber,
