@@ -1,6 +1,9 @@
 package com.champsoft.cardshop.DataAccessLayer.Entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -40,8 +43,11 @@ public class Card {
     @Column(name = "pokemon", nullable=false, length=60)
     private String pokemon;
 
-    @Column(name = "grade", nullable=false)
-    private double grade;
+    @NotNull
+    @DecimalMin("0.0")
+    @DecimalMax("10.0")
+    @Column(name = "grade", nullable = false)
+    private Double grade;
 
     @Column(name = "for_sale", nullable=false)
     private boolean forSale;
